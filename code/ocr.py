@@ -1,3 +1,4 @@
+import pandas as pd
 try:
     from PIL import Image
 except ImportError:
@@ -13,5 +14,8 @@ lis[0]=list(lis[0])
 for i in range(len(lis[0])):
     if(lis[0][i]==" " and lis[0][i+1].isupper()):
         lis[0][i]="$"
+for i in range(1,len(lis)):
+    lis[i]=lis[i].split(" ")
 lis[0]=("".join(lis[0])).split("$")
-print(lis)
+df=pd.DataFrame(lis[1:],columns=lis[0])  
+print(df)
