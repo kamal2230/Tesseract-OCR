@@ -22,11 +22,12 @@ lis[0]=("".join(lis[0])).split("$")
 df=pd.DataFrame(lis[1:],columns=lis[0])  
 print(df)
 app = Flask(__name__)
-
-# a route where we will display a welcome message via an HTML template
 @app.route("/")
+def first():
+    return render_template('index.html')
+@app.route("/hello")
 def hello():
     message=t
-    return render_template('index.html', message=message)
+    return render_template('sol.html', message=message)
 if __name__ == "__main__":
     app.run(debug=True,port=3000)
