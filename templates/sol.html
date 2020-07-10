@@ -1,10 +1,14 @@
-<!-- templates/index.html -->
-<html>
-  <head>
-    <title>Kamal</title>
-  </head>
-  <body>
-    <h1>Tesseract OCR</h1>
-    <h3>{{message}}</h3>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tesseract OCR</h1><br><br>
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+</body>
 </html>

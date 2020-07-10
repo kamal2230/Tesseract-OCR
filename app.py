@@ -28,6 +28,6 @@ def first():
 @app.route("/hello")
 def hello():
     message=t
-    return render_template('sol.html', message=message)
+    return render_template('sol.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
 if __name__ == "__main__":
     app.run(debug=True,port=3000)
