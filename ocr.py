@@ -1,4 +1,11 @@
 import pandas as pd
+from flask import Flask
+from flask import render_template
+
+# creates a Flask application, named app
+# run the application
+if __name__ == "__main__":
+    app.run(debug=True,port=3000)
 try:
     from PIL import Image
 except ImportError:
@@ -6,7 +13,7 @@ except ImportError:
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd="C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
 t=pytesseract.image_to_string(Image.open("Tactii.png"))
-t=t.replace("v ","")
+"""t=t.replace("v ","")
 t=t.replace("Name","name")
 t=t.replace("Definition","definition")
 lis=list((t.split("\n\n")))
@@ -18,4 +25,11 @@ for i in range(1,len(lis)):
     lis[i]=lis[i].split(" ")
 lis[0]=("".join(lis[0])).split("$")
 df=pd.DataFrame(lis[1:],columns=lis[0])  
-print(df)
+print(df)"""
+app = Flask(__name__)
+
+# a route where we will display a welcome message via an HTML template
+@app.route("/")
+def hello():
+    message=t
+    return render_template('index.html', message=message)
