@@ -6,8 +6,9 @@ try:
 except ImportError:
     import Image
 import pytesseract
+filename="static\Tactii.png"
 pytesseract.pytesseract.tesseract_cmd="C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
-t=pytesseract.image_to_string(Image.open("static\Tactii.png"))
+t=pytesseract.image_to_string(Image.open(filename))
 t=t.replace("v ","")
 t=t.replace("Name","name")
 t=t.replace("Definition","definition")
