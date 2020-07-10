@@ -1,9 +1,6 @@
 import pandas as pd
 from flask import Flask
 from flask import app, render_template
-
-# creates a Flask application, named app
-# run the application
 try:
     from PIL import Image
 except ImportError:
@@ -29,7 +26,7 @@ app = Flask(__name__)
 # a route where we will display a welcome message via an HTML template
 @app.route("/")
 def hello():
-    message=df
+    message=t
     return render_template('index.html', message=message)
 if __name__ == "__main__":
     app.run(debug=True,port=3000)
