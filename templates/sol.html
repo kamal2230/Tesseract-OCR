@@ -9,15 +9,11 @@
           font-family: Arial;
           color: beige;
           position: absolute;
-          left: 20%;
         }
         </style>
 </head>
 <body>
 <h1 style="text-align: center;">Tesseract OCR</h1><br>
-{% for table in tables %}
-            {{titles[loop.index]}}
-            {{ table|safe }}
-{% endfor %}
+<p>{{message}}</p>
 </body>
 </html>
