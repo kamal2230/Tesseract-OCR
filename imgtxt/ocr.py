@@ -10,7 +10,7 @@ try:
 except ImportError:
     import Image
 import pytesseract
-filename="static\Tactii.png"
+filename="imgtxt\static\Tactii.png"
 pytesseract.pytesseract.tesseract_cmd="C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
 t=pytesseract.image_to_string(Image.open(filename))
 app = Flask(__name__)
