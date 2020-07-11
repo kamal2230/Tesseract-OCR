@@ -20,5 +20,4 @@ def first():
 @app.route("/hello")
 def hello():
     return render_template('sol.html',message=t)
-if __name__ == "__main__":
-    app.run(debug=True)
+
